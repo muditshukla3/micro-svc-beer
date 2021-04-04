@@ -1,8 +1,11 @@
 package com.ms.domain;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
+import com.ms.web.model.BeerStyleEnum;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -16,28 +19,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Beer {
+public class Beer extends BaseEntity {
 
-    @Id @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
-    private UUID id;
-
-    @Version
-    private Long version;
-
-    @CreationTimestamp
-    @Column(updatable = false)
-    private Timestamp createdDate;
-
-    @UpdateTimestamp
-    private Timestamp updatedDate;
+    private UUID beerId;
 
     private String beerName;
-    private String beerStyle;
+    private BeerStyleEnum beerStyle;
 
     @Column(unique = true)
-    private Long upc;
+    private String upc;
     private BigDecimal price;
 
     private Integer minOnHand;

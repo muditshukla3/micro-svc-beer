@@ -17,6 +17,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.UUID;
 
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -33,10 +34,13 @@ class BeerControllerTest {
     @MockBean
     BeerService beerService;
 
+    public static final String BEER_1_UPC = "0631234200036";
+    public static final String BEER_2_UPC = "0631234300019";
+    public static final String BEER_3_UPC = "0083783375213";
     @Test
     public void getBeerById() throws Exception {
 
-       given(beerService.getBeerById(UUID.randomUUID())).willReturn(getValidBeerWithId());
+       given(beerService.getBeerById(UUID.randomUUID(), anyBoolean())).willReturn(getValidBeerWithId());
 
         mockMvc.perform(get("/api/v1/beer/{beerId}",UUID.randomUUID().toString())
                 .accept(MediaType.APPLICATION_JSON))
@@ -71,7 +75,7 @@ class BeerControllerTest {
                 .beerName("MillerLite")
                 .beerStyle(BeerStyleEnum.PALE_ALE)
                 .price(new BigDecimal("2.99"))
-                .upc(10920910L).build();
+                .upc(BEER_1_UPC).build();
     }
 
     private BeerDTO getValidBeerWithId(){
@@ -79,8 +83,8 @@ class BeerControllerTest {
                 .beerName("MillerLite")
                 .beerStyle(BeerStyleEnum.PALE_ALE)
                 .price(new BigDecimal("2.99"))
-                .upc(10920910L)
-                .id(UUID.randomUUID())
+                .upc(BEER_1_UPC)
+                .beerId(UUID.randomUUID())
                 .version(1)
                 .quantityOnHand(100).createdDate(OffsetDateTime.of(LocalDateTime.now(), ZoneOffset.UTC))
                 .lastModifiedDate(OffsetDateTime.of(LocalDateTime.now(), ZoneOffset.UTC))
