@@ -67,6 +67,12 @@ public class BeerServiceImpl implements BeerService {
         return null;
     }
 
+    @Override
+    public BeerDTO getBeerByUpc(String beerUPC) {
+        return beerMapper.beerToBeerDTO(
+                beerRepository.findByUpc(beerUPC).orElseThrow(() -> new NotFoundException("BeerNotFound")));
+    }
+
     @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")
     @Override
     public BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle,
