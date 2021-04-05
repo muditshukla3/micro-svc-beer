@@ -9,6 +9,9 @@ beer:
 spring:
   datasource:
     initialization-mode: EMBEDDED
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
 
 logging:
   level:

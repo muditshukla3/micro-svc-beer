@@ -7,7 +7,9 @@ import com.ms.web.exception.NotFoundException;
 import com.ms.web.model.BeerDTO;
 import com.ms.web.model.BeerPagedList;
 import com.ms.web.model.BeerStyleEnum;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class BeerServiceImpl implements BeerService {
     @Autowired
     BeerRepository beerRepository;
@@ -24,9 +27,10 @@ public class BeerServiceImpl implements BeerService {
     @Autowired
     BeerMapper beerMapper;
 
+    @Cacheable(cacheNames = "beerCache",key = "#beerId" ,condition = "#showInventoryOnHand == false")
     @Override
     public BeerDTO getBeerById(UUID beerId, Boolean showInventoryOnHand) {
-
+        log.info("I was called getBeerById");
         if(showInventoryOnHand){
             return beerMapper.beerToBeerDTOWithInventory(
                     beerRepository.findByBeerId(beerId).orElseThrow(() -> new NotFoundException("BeerNotFound"))
@@ -63,12 +67,14 @@ public class BeerServiceImpl implements BeerService {
         return null;
     }
 
+    @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")
     @Override
     public BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle,
                                    PageRequest pageRequest, Boolean showInventoryOnHand) {
         BeerPagedList beerPagedList;
         Page<Beer> beerPage;
 
+        log.info("I was called listBeers");
         if (StringUtils.hasText(beerName) && StringUtils.hasText(beerStyle.toString())) {
             //search both
             beerPage = beerRepository.findAllByBeerNameAndBeerStyle(beerName, beerStyle, pageRequest);
