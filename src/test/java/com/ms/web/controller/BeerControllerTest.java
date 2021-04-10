@@ -6,6 +6,7 @@ import com.ms.web.model.BeerStyleEnum;
 import com.ms.web.services.BeerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -19,10 +20,13 @@ import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.BDDMockito.given;
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
+@AutoConfigureWebClient
 class BeerControllerTest {
 
     @Autowired
@@ -40,7 +44,7 @@ class BeerControllerTest {
     @Test
     public void getBeerById() throws Exception {
 
-       given(beerService.getBeerById(UUID.randomUUID(), anyBoolean())).willReturn(getValidBeerWithId());
+       given(beerService.getBeerById(UUID.randomUUID(), false)).willReturn(getValidBeerWithId());
 
         mockMvc.perform(get("/api/v1/beer/{beerId}",UUID.randomUUID().toString())
                 .accept(MediaType.APPLICATION_JSON))
