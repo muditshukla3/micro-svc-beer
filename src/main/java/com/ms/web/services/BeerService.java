@@ -1,8 +1,8 @@
 package com.ms.web.services;
 
-import com.ms.web.model.BeerDTO;
-import com.ms.web.model.BeerPagedList;
-import com.ms.web.model.BeerStyleEnum;
+import com.ms.domain.BeerDTO;
+import com.ms.domain.BeerPagedList;
+import com.ms.domain.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

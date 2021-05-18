@@ -5,7 +5,7 @@ import com.ms.domain.Beer;
 import com.ms.events.BrewBeerEvent;
 import com.ms.events.NewInventoryEvent;
 import com.ms.repositories.BeerRepository;
-import com.ms.web.model.BeerDTO;
+import com.ms.domain.BeerDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;

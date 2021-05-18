@@ -1,8 +1,8 @@
 package com.ms.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ms.web.model.BeerDTO;
-import com.ms.web.model.BeerStyleEnum;
+import com.ms.domain.BeerDTO;
+import com.ms.domain.BeerStyleEnum;
 import com.ms.web.services.BeerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,6 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.UUID;
 
-import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

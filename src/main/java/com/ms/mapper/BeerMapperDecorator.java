@@ -1,7 +1,7 @@
 package com.ms.mapper;
 
 import com.ms.domain.Beer;
-import com.ms.web.model.BeerDTO;
+import com.ms.domain.BeerDTO;
 import com.ms.web.services.inventory.BeerInventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 

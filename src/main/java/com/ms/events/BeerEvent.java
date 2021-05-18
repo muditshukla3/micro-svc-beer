@@ -1,6 +1,6 @@
 package com.ms.events;
 
-import com.ms.web.model.BeerDTO;
+import com.ms.domain.BeerDTO;
 import lombok.*;
 
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package com.ms.web.model;
+package com.ms.domain;
 
 public enum BeerStyleEnum {
     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SAISON

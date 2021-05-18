@@ -1,4 +1,4 @@
-package com.ms.web.model;
+package com.ms.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

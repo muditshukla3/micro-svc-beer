@@ -1,4 +1,4 @@
-package com.ms.web.model;
+package com.ms.domain;
 
 
 import org.springframework.data.domain.PageImpl;

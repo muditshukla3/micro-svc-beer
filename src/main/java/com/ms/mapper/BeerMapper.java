@@ -1,7 +1,7 @@
 package com.ms.mapper;
 
 import com.ms.domain.Beer;
-import com.ms.web.model.BeerDTO;
+import com.ms.domain.BeerDTO;
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 
