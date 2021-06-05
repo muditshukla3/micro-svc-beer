@@ -1,9 +1,9 @@
-package com.ms.web.services.brewing;
+package com.ms.services.brewing;
 
 import com.ms.config.config.JMSConfig;
 import com.ms.domain.Beer;
-import com.ms.events.BrewBeerEvent;
-import com.ms.events.NewInventoryEvent;
+import com.ms.domain.events.BrewBeerEvent;
+import com.ms.domain.events.NewInventoryEvent;
 import com.ms.repositories.BeerRepository;
 import com.ms.domain.BeerDTO;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.ms.web.exception;
+package com.ms.exception;
 
 import lombok.NoArgsConstructor;
 

@@ -1,11 +1,11 @@
-package com.ms.web.services.brewing;
+package com.ms.services.brewing;
 
 import com.ms.config.config.JMSConfig;
 import com.ms.domain.Beer;
-import com.ms.events.BrewBeerEvent;
+import com.ms.domain.events.BrewBeerEvent;
 import com.ms.mapper.BeerMapper;
 import com.ms.repositories.BeerRepository;
-import com.ms.web.services.inventory.BeerInventoryService;
+import com.ms.services.inventory.BeerInventoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.core.JmsTemplate;

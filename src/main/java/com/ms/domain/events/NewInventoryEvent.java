@@ -1,4 +1,4 @@
-package com.ms.events;
+package com.ms.domain.events;
 
 import com.ms.domain.BeerDTO;
 import lombok.NoArgsConstructor;

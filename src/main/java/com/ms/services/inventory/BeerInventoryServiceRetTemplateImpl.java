@@ -1,10 +1,9 @@
-package com.ms.web.services.inventory;
+package com.ms.services.inventory;
 
-import com.ms.web.services.inventory.model.BeerInventoryDTO;
+import com.ms.services.inventory.model.BeerInventoryDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;

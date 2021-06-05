@@ -1,4 +1,4 @@
-package com.ms.web.services;
+package com.ms.services;
 
 import com.ms.domain.BeerDTO;
 import com.ms.domain.BeerPagedList;

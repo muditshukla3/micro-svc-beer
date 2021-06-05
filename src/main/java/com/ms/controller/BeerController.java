@@ -1,9 +1,9 @@
-package com.ms.web.controller;
+package com.ms.controller;
 
 import com.ms.domain.BeerDTO;
 import com.ms.domain.BeerPagedList;
 import com.ms.domain.BeerStyleEnum;
-import com.ms.web.services.BeerService;
+import com.ms.services.BeerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;

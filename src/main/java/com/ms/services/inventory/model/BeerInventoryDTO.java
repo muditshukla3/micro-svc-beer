@@ -1,4 +1,4 @@
-package com.ms.web.services.inventory.model;
+package com.ms.services.inventory.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

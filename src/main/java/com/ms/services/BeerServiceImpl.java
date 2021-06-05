@@ -1,9 +1,9 @@
-package com.ms.web.services;
+package com.ms.services;
 
 import com.ms.domain.Beer;
 import com.ms.mapper.BeerMapper;
 import com.ms.repositories.BeerRepository;
-import com.ms.web.exception.NotFoundException;
+import com.ms.exception.NotFoundException;
 import com.ms.domain.BeerDTO;
 import com.ms.domain.BeerPagedList;
 import com.ms.domain.BeerStyleEnum;

@@ -1,4 +1,4 @@
-package com.ms.web.services.inventory;
+package com.ms.services.inventory;
 
 import java.util.UUID;
 

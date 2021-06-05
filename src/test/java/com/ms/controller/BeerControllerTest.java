@@ -1,9 +1,9 @@
-package com.ms.web.controller;
+package com.ms.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ms.domain.BeerDTO;
 import com.ms.domain.BeerStyleEnum;
-import com.ms.web.services.BeerService;
+import com.ms.services.BeerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient;
