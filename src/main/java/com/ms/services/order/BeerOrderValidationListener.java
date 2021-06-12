@@ -1,6 +1,6 @@
 package com.ms.services.order;
 
-import com.ms.config.config.JMSConfig;
+import com.ms.config.JMSConfig;
 import com.ms.domain.events.ValidateBeerOrderRequest;
 import com.ms.domain.events.ValidateOrderResult;
 import lombok.RequiredArgsConstructor;

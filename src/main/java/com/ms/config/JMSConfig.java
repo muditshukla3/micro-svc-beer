@@ -1,4 +1,4 @@
-package com.ms.config.config;
+package com.ms.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;

@@ -4,6 +4,7 @@ import com.ms.services.inventory.model.BeerInventoryDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +15,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+@Profile("!local")
 @Slf4j
 @Component
 public class BeerInventoryServiceRetTemplateImpl implements BeerInventoryService {
 
-    private final String INVENTORY_PATH="/api/v1/beer/{beerId}/inventory";
+    public static final String INVENTORY_PATH="/api/v1/beer/{beerId}/inventory";
 
     @Autowired
     RestTemplate restTemplate;

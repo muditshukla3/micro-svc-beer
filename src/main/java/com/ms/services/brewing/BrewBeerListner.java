@@ -1,6 +1,6 @@
 package com.ms.services.brewing;
 
-import com.ms.config.config.JMSConfig;
+import com.ms.config.JMSConfig;
 import com.ms.domain.Beer;
 import com.ms.domain.events.BrewBeerEvent;
 import com.ms.domain.events.NewInventoryEvent;

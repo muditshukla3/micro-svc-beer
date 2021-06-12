@@ -6,6 +6,8 @@ beer:
     host:
       inventory: http://localhost:8082
 spring:
+  application:
+    name: beer-service
   artemis:
     #defaults for docker image vromero/activemq-artemis
     user: artemis
