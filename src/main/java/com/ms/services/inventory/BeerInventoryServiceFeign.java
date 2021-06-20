@@ -17,17 +17,18 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class BeerInventoryServiceFeign implements BeerInventoryService {
 
-    private final BeerInventoryFeignClient beerInventoryFeignClient;
+    private final InventoryServiceFeignClient inventoryServiceFeignClient;
 
     @Override
     public Integer getOnHandInventory(UUID uuid) {
         log.info("Calling feign client::: for beer id {}",uuid);
-        ResponseEntity<List<BeerInventoryDTO>> responseEntity = beerInventoryFeignClient.getOnHandInventory(uuid);
+        ResponseEntity<List<BeerInventoryDTO>> responseEntity = inventoryServiceFeignClient.getOnHandInventory(uuid);
 
         Integer quantityOnHand = Objects.requireNonNull(responseEntity.getBody())
                 .stream()
                 .mapToInt(BeerInventoryDTO::getQuantityOnHand)
                 .sum();
+        log.info("Got quantity on hand:::: {}",quantityOnHand);
         return quantityOnHand;
     }
 }

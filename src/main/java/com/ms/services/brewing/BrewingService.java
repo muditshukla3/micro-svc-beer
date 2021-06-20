@@ -24,7 +24,7 @@ public class BrewingService {
     private final JmsTemplate jmsTemplate;
     private final BeerMapper beerMapper;
 
-    @Scheduled(fixedRate = 5000)//every 5 second
+    @Scheduled(fixedRate = 15000)//every 15 second
     public void checkForLowInventory(){
 
         List<Beer> beers = beerRepository.findAll();

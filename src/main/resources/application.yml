@@ -24,6 +24,10 @@ spring:
     jcache:
       config: classpath:ehcache.xml
 
+feign:
+  circuitbreaker:
+    enabled: true
+
 logging:
   level:
     root: info

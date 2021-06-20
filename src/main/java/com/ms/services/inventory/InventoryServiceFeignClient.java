@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @FeignClient(name="beer-inventory")
-public interface BeerInventoryFeignClient{
+public interface InventoryServiceFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value=BeerInventoryServiceRetTemplateImpl.INVENTORY_PATH)
     ResponseEntity<List<BeerInventoryDTO>> getOnHandInventory(@PathVariable  UUID beerId);
