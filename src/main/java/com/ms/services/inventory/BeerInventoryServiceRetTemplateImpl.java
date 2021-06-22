@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-@Profile("!local")
+@Profile("local")
 @Slf4j
 @Component
 public class BeerInventoryServiceRetTemplateImpl implements BeerInventoryService {

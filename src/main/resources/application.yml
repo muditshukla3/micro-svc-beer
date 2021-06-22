@@ -23,6 +23,9 @@ spring:
   cache:
     jcache:
       config: classpath:ehcache.xml
+  cloud:
+    discovery:
+      enabled: false
 
 feign:
   circuitbreaker:
