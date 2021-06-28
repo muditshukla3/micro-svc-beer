@@ -25,7 +25,12 @@ spring:
       config: classpath:ehcache.xml
   cloud:
     discovery:
-      enabled: false
+      enabled: true
+  zipkin:
+    baseUrl: http://localhost:9411/
+    enabled: true
+    service:
+      name: ${spring.application.name}
 
 feign:
   circuitbreaker:
